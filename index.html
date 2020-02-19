@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='all.css'>
+</head>
+<body>
+  <div id="app">
+    <main>
+      <div class="flex">
+        <form class="form-login" method="post">
+          <legend>Login now!</legend>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            maxlength="20"
+            placeholder="@username">
+          <br>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="5"
+            maxlength="12"
+            placeholder="type your password">
+          <br>
+          <input
+            type="submit"
+            class="btn-login"
+            value="Sign in">
+        </form>
+      </div>
+      <ul class="squares">
+      </ul>
+    </main>
+  </div>
+  <script src='index.js'></script>
+</body>
+</html>

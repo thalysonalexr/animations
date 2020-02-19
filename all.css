@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body, #app, main{
+  height: 100%;
+  min-height: 100%;
+  background-color: #8142f5;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 2vh;
+}
+
+.form-login{
+  border: 1px solid rgba(54,54,54,0.3);
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  padding: 2vh;
+  animation-name: fade;
+  animation-delay: 200ms;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+legend{
+  color: #6b2edb;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2vh;
+  margin-bottom: 2vh;
+}
+
+input[type='text'],
+input[type='password']{
+  border-radius: 5px;
+  padding: 2vh;
+  margin-bottom: 2vh;
+  color: rgba(42,42,42,0.8);
+  border: 1px solid rgba(42,42,42,0.2);
+}
+
+.form-login > input{
+  width: 100%;
+  animation: slide;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+}
+
+input[type='text']{ animation-delay: 200ms; }
+
+input[type='password']{ animation-delay: 400ms; }
+
+input[type='submit']{
+  width: 100%;
+  padding: 2vh;
+  border-radius: 5px;
+  background-color: #6b2edb;
+  color: #f5f5f5;
+  cursor: pointer;
+  animation-delay: 600ms;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@keyframes fade{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes slide{
+  from{
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.input-empty{
+  border: 1px solid #e04141!important;
+  background-color: #ff9999;
+}
+
+.validation-error{
+  animation: not 300ms linear, fade paused;
+  animation-iteration-count: 2;
+}
+
+@keyframes not{
+  from, to{
+    transform: translateX(0);
+  }
+  35%{
+    transform: translateX(-25%);
+  }
+  70%{
+    transform: translateX(25%);
+  }
+}
+
+.hide-form{
+  animation-name: hide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide{
+  from{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-30%);
+  }
+  to{
+    transform: translateY(800px);
+  }
+}
+
+ul.squares{ list-style: none; }
+
+body{ overflow: hidden; }
+
+ul > .square{
+  width: 40px;
+  height: 40px;
+  bottom: -40px;
+  position: absolute;
+  background-color: rgba(255,255,255,0.15);
+  animation-name: up;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes up{
+  from{
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50%{
+    opacity: 1;
+  }
+  to{
+    transform: translateY(-800px) rotate(960deg);
+  }
+}
+
+@media screen and (min-width: 445px) {
+  .form-login{ width: 350px; }
+}
